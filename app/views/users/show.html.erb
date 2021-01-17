@@ -1,0 +1,27 @@
+<section>
+	<h1>
+		<span class='prefix'>User</span>
+		<%= @user.email %>
+		<%= link_to 'Edit', edit_user_registration_path, :class => :button if @user == current_user %>
+	</h1>
+	
+	<% if @user == current_user %>
+		<table class='virtical'>
+			<tr>
+				<th>E-mail</th>
+				<td><%= @user.email -%></td>
+			</tr>
+		</table>
+	<% end %>
+
+	<section>
+		<h2>
+			Configurations
+			<%= link_to 'Create', new_config_path, class: 'button' %>
+		</h2>
+
+		<%= render partial: 'configs/configs', locals: {configs:@configs} %>
+
+	</section>
+
+</section>

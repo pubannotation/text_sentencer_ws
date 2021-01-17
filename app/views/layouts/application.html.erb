@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TextSentencerWs</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title>TextSentencer</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= yield :css -%>
+		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= yield :javascript -%>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+	<body>
+		<div id='canvas'>
+
+		<div class="frame">
+		<div class="title">
+			<%= link_to 'TextSentencer', root_path, id: 'logo' %>
+			<ul class="main-nav">
+				<li><%= link_to 'Configs', configs_path %></li>
+				<li><a href="https://github.com/jdkim/text_sentencer">GitHub</a></li>
+			</ul>
+		</div>
+
+		<div class="ribbon">
+			<div class="notice"><%= notice %></div>
+			<div id="account" class="menu">
+				<ul>
+					<li><%= render 'devise/menu/registration_items' %></li>
+					<li><%= render 'devise/menu/login_items' %></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+		<div class="path">
+			<div class="content">
+				<%= yield :path -%>
+			</div>
+		</div>
+
+		<div class="content">
+			<%= yield %>
+		</div>
+	</body>
 </html>

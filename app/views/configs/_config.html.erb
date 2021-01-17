@@ -1,0 +1,5 @@
+<tr>
+	<td><%= link_to(config.name, config, class: 'cell-link') %></td>
+	<td><%= link_to(strip_tags(config.description), config, class: 'cell-link') %></td>
+	<td><%= link_to(config.user.email, config.user, class: 'cell-link') %></td>
+</tr>

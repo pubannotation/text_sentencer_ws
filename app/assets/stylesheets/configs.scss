@@ -1,0 +1,52 @@
+// Place all the styles related to the configs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.configs-list {
+	table {
+		table-layout:fixed;
+		width: 100%;
+
+		tbody {
+			tr {
+				background-color: #fff;
+
+				&:nth-child(even) {
+					background-color: #efd;
+				}
+
+				&:hover {
+					background-color: #f5f5f0;
+				}
+			}
+
+			td {
+				a.cell-link {
+					display: block;
+					color: #44b;
+
+					&:hover {
+						color: #44b;
+					}
+				}
+			}
+		}
+	}
+}
+
+.col-config-name {
+	width: 10em;
+}
+
+.col-config-description {
+	max-width: 20em;
+}
+
+.col-config-publicity {
+	width: 2em;
+}
+
+.col-config-user {
+	width: 12em;
+}
+
