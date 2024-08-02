@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.3.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
@@ -28,12 +28,17 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'base64'
+gem 'bigdecimal'
+gem 'mutex_m'
+
 gem 'friendly_id'
 # gem 'wice_grid'
 # gem 'font-awesome-sass',  '~> 4.3'
 gem "font-awesome-rails"
 gem 'clipboard-rails'
 gem 'devise'
+gem 'sidekiq'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'unicorn'
 
