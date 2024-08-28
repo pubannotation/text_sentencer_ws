@@ -15,8 +15,12 @@ class SentencerController < ApplicationController
 				'PubMed'
 			end
 
-			c = Config.friendly.find(config_name)
-			config = JSON.parse c.body, symbolize_names: true
+			config = begin
+				r = Config.friendly.find(config_name)
+				config = JSON.parse r.body, symbolize_names: true
+			rescue
+				{}
+			end
 
 			@result = if text.present?
 				annotator = TextSentencer.new(TextSentencer::DEFAULT_RULES)
