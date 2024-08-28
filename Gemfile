@@ -42,8 +42,8 @@ gem 'sidekiq'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'unicorn'
 
-gem 'text_sentencer'
-
+#gem 'text_sentencer'
+gem 'text_sentencer_c', '~> 0.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
