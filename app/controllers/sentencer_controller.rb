@@ -19,7 +19,7 @@ class SentencerController < ApplicationController
 			config = JSON.parse c.body, symbolize_names: true
 
 			@result = if text.present?
-				annotator = TextSentencer.new(config)
+				annotator = TextSentencer.new(TextSentencer::DEFAULT_RULES)
 				annotator.annotate(text)
 			else
 				{}
